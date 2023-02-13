@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="/js/script.js" defer></script>
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div
+        class="flex flex-col items-center justify-center gap-8 pt-8 w-full min-h-screen bg-lightGrayishCyan font-spaceMono sm:px-4"
+      >
+        <!-- Logo -->
+        <div>
+          <img src="./images/logo.svg" alt="Spilter logo" />
+        </div>
+
+        <!-- Calculator -->
+        <div
+          class="flex flex-col gap-4 bg-white rounded-t-xl max-w-3xl w-full p-5 md:flex-row md:rounded-xl md:gap-6 md:p-7"
+        >
+          <!-- Bill -->
+          <section class="md:w-1/2">
+            <div class="flex flex-col mb-8">
+              <div class="flex justify-between">
+                <label for="bill" class="text-darkGrayishCyan font-bold mb-2"
+                  >Bill</label
+                >
+                <p class="error-bill hidden text-red-500">Number only</p>
+              </div>
+              <input
+                type="text"
+                id="bill"
+                name="bill"
+                placeholder="0"
+                class="bg-veryLightGrayishCyan bg-[url('/images/icon-dollar.svg')] bg-no-repeat bg-[left_0.75rem_bottom_50%] p-2 text-right text-veryDarkCyan text-2xl rounded-md cursor-pointer focus:outline-strongCyan caret-strongCyan"
+              />
+            </div>
+
+            <fieldset class="grid grid-cols-2 gap-4 mb-8 sm:grid-cols-3">
+              <legend class="text-darkGrayishCyan font-bold mb-2">
+                Select Tip %
+              </legend>
+              <div class="flex justify-center">
+                <input
+                  type="radio"
+                  id="5%"
+                  name="select-tip"
+                  data-tip="5"
+                  checked
+                  class="peer hidden"
+                />
+                <label
+                  for="5%"
+                  class="text-white text-center py-2 bg-veryDarkCyan w-full h-full rounded-md cursor-pointer hover:bg-strongCyan hover:text-veryDarkCyan peer-checked:bg-lightStrongCyan peer-checked:text-veryDarkCyan"
+                  >5%</label
+                >
+              </div>
+              <div class="flex justify-center">
+                <input
+                  type="radio"
+                  id="10%"
+                  name="select-tip"
+                  data-tip="10"
+                  class="peer hidden"
+                />
+                <label
+                  for="10%"
+                  class="text-white text-center py-2 bg-veryDarkCyan w-full h-full rounded-md cursor-pointer hover:bg-strongCyan hover:text-veryDarkCyan peer-checked:bg-lightStrongCyan peer-checked:text-veryDarkCyan"
+                  >10%</label
+                >
+              </div>
+              <div class="flex justify-center">
+                <input
+                  type="radio"
+                  id="15%"
+                  name="select-tip"
+                  data-tip="15"
+                  class="peer hidden"
+                />
+                <label
+                  for="15%"
+                  class="text-white text-center py-2 bg-veryDarkCyan w-full h-full rounded-md cursor-pointer hover:bg-strongCyan hover:text-veryDarkCyan peer-checked:bg-lightStrongCyan peer-checked:text-veryDarkCyan"
+                  >15%</label
+                >
+              </div>
+              <div class="flex justify-center">
+                <input
+                  type="radio"
+                  id="25%"
+                  name="select-tip"
+                  data-tip="25"
+                  class="peer hidden"
+                />
+                <label
+                  for="25%"
+                  class="text-white text-center py-2 bg-veryDarkCyan w-full h-full rounded-md cursor-pointer hover:bg-strongCyan hover:text-veryDarkCyan peer-checked:bg-lightStrongCyan peer-checked:text-veryDarkCyan"
+                  >25%</label
+                >
+              </div>
+              <div class="flex justify-center">
+                <input
+                  type="radio"
+                  id="50%"
+                  name="select-tip"
+                  data-tip="50"
+                  class="peer hidden"
+                />
+                <label
+                  for="50%"
+                  class="text-white text-center py-2 bg-veryDarkCyan w-full h-full rounded-md cursor-pointer hover:bg-strongCyan hover:text-veryDarkCyan peer-checked:bg-lightStrongCyan peer-checked:text-veryDarkCyan"
+                  >50%</label
+                >
+              </div>
+              <div>
+                <label for="custom" class="hidden">Custom</label>
+                <input
+                  type="text"
+                  id="custom"
+                  name="select-tip"
+                  data-tip-custom="0"
+                  placeholder="Custom"
+                  class="text-right w-full h-full bg-veryLightGrayishCyan rounded-md pr-3 caret-strongCyan cursor-pointer placeholder:text-darkGrayishCyan focus:outline-strongCyan focus:text-strongCyan"
+                />
+              </div>
+            </fieldset>
+
+            <div class="mb-5">
+              <div class="flex justify-between">
+                <label
+                  for="num-of-ppl"
+                  class="text-darkGrayishCyan font-bold mb-2"
+                  >Number of People</label
+                >
+                <p class="error-num hidden text-red-500">Can't be zero</p>
+              </div>
+              <input
+                type="text"
+                id="num-of-ppl"
+                name="num-of-ppl"
+                placeholder="0"
+                class="w-full p-2 text-2xl rounded-md bg-veryLightGrayishCyan bg-[url('/images/icon-person.svg')] bg-no-repeat bg-[left_0.75rem_bottom_50%] text-right text-veryDarkCyan caret-strongCyan cursor-pointer placeholder:text-grayishCyan focus:outline-strongCyan"
+              />
+            </div>
+          </section>
+
+          <!-- Display -->
+          <section
+            class="flex flex-col bg-veryDarkCyan px-4 py-6 rounded-lg md:w-1/2 md:p-8"
+          >
+            <!-- Tip amount-->
+            <div class="flex justify-between items-center mb-4 md:mb-10">
+              <p class="text-white text-md leading-5">
+                Tip Amount <br />
+                <span class="text-darkGrayishCyan text-sm">/ person</span>
+              </p>
+              <p class="tip-amount text-strongCyan text-3xl">$0.00</p>
+            </div>
+
+            <!-- Total -->
+            <div class="flex justify-between items-center mb-7 md:mb-auto">
+              <p class="text-white text-md leading-5">
+                Total <br />
+                <span class="text-darkGrayishCyan text-sm">/ person</span>
+              </p>
+              <p class="total text-strongCyan text-3xl">$0.00</p>
+            </div>
+
+            <!-- Reset -->
+            <button
+              type="reset"
+              class="reset-btn text-veryDarkCyan bg-strongCyan py-2 w-full rounded-md uppercase transition hover:bg-lightStrongCyan active:bg-strongCyan"
+            >
+              Reset
+            </button>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
